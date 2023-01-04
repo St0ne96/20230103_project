@@ -1,7 +1,9 @@
 const express = require("express");
 const userRouter = require("./routes/user.routes.js");
+const laundryRouter = require("./routes/laundry.routes.js");
 
 const app = express();
+app.use(express.json());
 
 require("dotenv").config();
 // console.log(process.env); // remove this after you've confirmed it is working
@@ -12,7 +14,7 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.use("/api", [userRouter]);
+app.use("/", [userRouter, laundryRouter]);
 
 app.listen(process.env.PORT, () => {
   console.log(`Example app listening on port ${process.env.PORT}`);

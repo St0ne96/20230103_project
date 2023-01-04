@@ -11,7 +11,7 @@ module.exports = {
       },
       userId: {
         allowNull: false,
-        references: { model: "Users", key: "id" },
+        // references: { model: "Users", key: "id" },
         type: Sequelize.BIGINT.UNSIGNED,
       },
       laundryName: {
